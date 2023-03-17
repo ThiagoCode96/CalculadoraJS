@@ -1,0 +1,17 @@
+#calculadora{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#wrapper{
+    display:grid;
+    grid-template-columns: repeat(4,100px);
+    background-color: brown;
+}
+#wrapper >textarea{
+    grid-column-start: 1;
+    grid-column-end: 5;
+    font-size: 2em;
+    align-text:end;
+    
+}
