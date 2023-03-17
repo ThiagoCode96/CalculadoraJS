@@ -25,7 +25,7 @@ function calc(x){
         numerando1=numerando2=operador="";
         document.getElementById("texto").innerHTML="";
     }
-    else if(isNaN(x) && numerando2!=""){
+    else if(isNaN(x) && numerando2!="" ){
         switch(operador){
             case '+':
                 numerando1=(Number(numerando1)+Number(numerando2));
@@ -66,7 +66,8 @@ function calc(x){
         return;
     }
     else if(isNaN(x) && numerando1!=""){
-        operador=x;
+        if(x!="=")
+            operador=x;
         console.log(operador);
         return;
     }
@@ -78,7 +79,7 @@ function calc(x){
         
     }
     
-    else{
+    else if (!isNaN(x)){
         numerando1+=String(x);
         document.getElementById("texto").innerHTML=numerando1;
         console.log(numerando1);
