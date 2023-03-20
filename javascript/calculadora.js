@@ -25,12 +25,21 @@ function calc(x){
         numerando1=numerando2=operador="";
         document.getElementById("texto").innerHTML="";
     }
+    else if(x=="c_to_f" && numerando1!=""){
+        numerando1=(Number(numerando1*1.8 + 32));
+        document.getElementById("texto").innerHTML=numerando1;
+
+    }
+    else if(x=="f_to_c" && numerando1!=""){
+        numerando1=(Number((numerando1-32)/1.8));
+        document.getElementById("texto").innerHTML=numerando1;
+
+    }
     else if(isNaN(x) && numerando2!="" ){
         switch(operador){
             case '+':
                 numerando1=(Number(numerando1)+Number(numerando2));
                 document.getElementById("texto").innerHTML=numerando1;
-                
             break;
             case '-':
                 numerando1=String(Number(numerando1)-Number(numerando2));
@@ -55,7 +64,10 @@ function calc(x){
             case '*':
                 numerando1=String(Number(numerando1)*Number(numerando2));
                 document.getElementById("texto").innerHTML=numerando1;
-
+            break;
+            case 'log':
+                numerando1=String(Number(Math.log(numerando1))/Number(Math.log(numerando2)));
+                document.getElementById("texto").innerHTML=numerando1;
         }
         if(x=='=')
             operador="";
@@ -84,6 +96,10 @@ function calc(x){
         document.getElementById("texto").innerHTML=numerando1;
         console.log(numerando1);
         return;
+    }
+    else{
+        numerando1=numerando2=operador="";
+        document.getElementById("texto").innerHTML="err"
     }
     
 
